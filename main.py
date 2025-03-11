@@ -5,9 +5,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# 🔹 Telegram Bot Token & Gamini API Key (Vercel-এর Env Variables থেকে নিবে)
-TELEGRAM_BOT_TOKEN = os.getenv("8174267515:AAElG9MkHRGIFmbf_4k_HektTAdNIXnPcfY")
-GAMINI_API_KEY = os.getenv("AIzaSyBll0reKSpvfXzapeSqP7wE782qYOcVLP4")
+# 🔹 Env Variables থেকে Token ও API Key নেওয়া
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GAMINI_API_KEY = os.getenv("GAMINI_API_KEY")
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
@@ -40,7 +40,7 @@ def webhook():
 
 @bot.message_handler(commands=["start"])
 def start(message):
-    bot.send_message(message.chat.id, "🤖 হ্যালো! আমি একটি AI Chatbot। যেকোনো কিছু জিজ্ঞেস করুন।")
+    bot.send_message(message.chat.id, "🤖 হ্যালো! আমি AI Chatbot। যেকোনো প্রশ্ন করুন।")
 
 @bot.message_handler(func=lambda message: True)
 def chat_ai(message):
