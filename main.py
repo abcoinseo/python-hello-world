@@ -6,8 +6,8 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # 🔹 Env Variables থেকে Token ও API Key নেওয়া
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-GAMINI_API_KEY = os.getenv("GAMINI_API_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("8174267515:AAElG9MkHRGIFmbf_4k_HektTAdNIXnPcfY")
+GAMINI_API_KEY = os.getenv("AIzaSyBll0reKSpvfXzapeSqP7wE782qYOcVLP4")
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
